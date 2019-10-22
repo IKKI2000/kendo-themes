@@ -3,14 +3,10 @@ $forms-invalid-color: $error !default;
 @include exports("forms/layout") {
 
     // Widgets
-    .k-dateinput,
-    .k-datepicker,
-    .k-datetimepicker,
     .k-dropdown,
     .k-multiselect,
     .k-numerictextbox,
     .k-maskedtextbox,
-    .k-timepicker,
     .k-dropdowntree {
         width: $input-default-width;
         font-size: $input-font-size;
@@ -34,14 +30,10 @@ $forms-invalid-color: $error !default;
             display: none;
         }
     }
-    .k-dateinput,
-    .k-datepicker,
-    .k-datetimepicker,
     .k-dropdown,
     .k-multiselect,
     .k-numerictextbox,
     .k-maskedtextbox,
-    .k-timepicker,
     .k-dropdowntree {
         border-width: 0;
         background-color: transparent;
@@ -69,9 +61,7 @@ $forms-invalid-color: $error !default;
 
 
     // Wrappers
-    .k-dateinput-wrap,
     .k-dropdown-wrap,
-    .k-picker-wrap,
     .k-multiselect-wrap,
     .k-numeric-wrap {
         @include border-radius( $input-border-radius );
@@ -115,9 +105,7 @@ $forms-invalid-color: $error !default;
     }
 
     // Other common
-    .k-dateinput-wrap,
     .k-dropdown-wrap,
-    .k-picker-wrap,
     .k-numeric-wrap {
         display: flex;
         flex-direction: row;
@@ -241,10 +229,6 @@ $forms-invalid-color: $error !default;
         }
     }
 
-    $spinner-width: button-inner-size() !default;
-    $spinner-icon-offset: 2px !default;
-
-    .k-dateinput,
     .k-numerictextbox {
 
         .k-select {
