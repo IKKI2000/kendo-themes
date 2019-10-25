@@ -8,7 +8,6 @@ $forms-invalid-color: $error !default;
     .k-datetimepicker,
     .k-dropdown,
     .k-multiselect,
-    .k-numerictextbox,
     .k-maskedtextbox,
     .k-timepicker,
     .k-dropdowntree {
@@ -39,7 +38,6 @@ $forms-invalid-color: $error !default;
     .k-datetimepicker,
     .k-dropdown,
     .k-multiselect,
-    .k-numerictextbox,
     .k-maskedtextbox,
     .k-timepicker,
     .k-dropdowntree {
@@ -72,8 +70,7 @@ $forms-invalid-color: $error !default;
     .k-dateinput-wrap,
     .k-dropdown-wrap,
     .k-picker-wrap,
-    .k-multiselect-wrap,
-    .k-numeric-wrap {
+    .k-multiselect-wrap {
         @include border-radius( $input-border-radius );
         padding: 0;
         width: 100%;
@@ -117,8 +114,7 @@ $forms-invalid-color: $error !default;
     // Other common
     .k-dateinput-wrap,
     .k-dropdown-wrap,
-    .k-picker-wrap,
-    .k-numeric-wrap {
+    .k-picker-wrap {
         display: flex;
         flex-direction: row;
 
@@ -244,8 +240,7 @@ $forms-invalid-color: $error !default;
     $spinner-width: button-inner-size() !default;
     $spinner-icon-offset: 2px !default;
 
-    .k-dateinput,
-    .k-numerictextbox {
+    .k-dateinput {
 
         .k-select {
             padding: 0;
