@@ -62,6 +62,22 @@
         }
     }
 
+    %left-rounded-child {
+        .k-card-vertical > &:first-child {
+            @include border-left-radius-only( $card-border-radius );
+        }
+    }
+
+    %right-rounded-child {
+        .k-card-vertical > &:last-child {
+            @include border-right-radius-only( $card-border-radius );
+        }
+    }
+
+    // Orientation
+    .k-card-vertical {
+        flex-direction: row;
+    }
 
     // Header
     .k-card-header {
@@ -88,6 +104,14 @@
         }
     }
 
+    // Footer
+    .k-card-footer {
+        @extend %top-rounded-child !optional;
+        @extend %bottom-rounded-child !optional;
+        padding: $card-footer-padding-y $card-footer-padding-x;
+        border-width: $card-footer-border-width 0 0;
+        border-style: solid;
+    }
 
     // Body
     .k-card-body {
@@ -108,9 +132,12 @@
 
 
     // Card image
-    .k-card-image {
+    .k-card-image,
+    .k-card-media {
         @extend %top-rounded-child !optional;
         @extend %bottom-rounded-child !optional;
+        @extend %left-rounded-child !optional;
+        @extend %right-rounded-child !optional;
         border: 0;
         max-width: 100%;
         overflow: hidden;
@@ -118,6 +145,10 @@
         > img {
             border: 0;
             max-width: 100%;
+        }
+
+        .k-card-vertical & {
+            flex-shrink: 0;
         }
     }
 
@@ -138,8 +169,32 @@
         margin-top: -( $card-title-margin-bottom * .75 );
     }
 
+    .k-card-thumbnail {
+        width: $card-thumbnail-size;
+        height: $card-thumbnail-size;
+        border-radius: 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-right: $card-thumbnail-spacing;
+        flex-shrink: 0;
+    }
+
 
     // Separator
+    .k-card-separator {
+        margin: 0;
+        border-width: 1px 0 0;
+        flex: 0 0 auto;
+        border-style: solid;
+        display: block;
+
+        &.k-separator-vertical {
+            border-width: 0 0 0 1px;
+            width: 0;
+        }
+    }
+
     .k-card > .k-hr {
         margin: 0;
         flex: 0 0 auto;
@@ -158,6 +213,7 @@
         overflow: hidden;
         flex-shrink: 0;
         flex-basis: auto;
+        display: flex;
 
         .k-card > & {
             border-top-width: $card-actions-border-width;
@@ -170,9 +226,14 @@
         }
 
         > .k-button.k-flat:first-child {
-            margin-left: (-$button-padding-x);
+            margin-left: $card-button-negative-spacing;
         }
+
+        &.k-card-actions-start { justify-content: flex-start; }
+        &.k-card-actions-end { justify-content: flex-end; }
+        &.k-card-actions-center { justify-content: center; }
     }
+
     .k-card-action {
         border-width: 0;
         border-style: solid;
@@ -192,17 +253,48 @@
         display: flex;
         flex-direction: column;
 
+        .k-button {
+            padding: ($card-actions-padding-y + $button-padding-y) $card-actions-padding-x;
+
+            &.k-flat:first-child {
+                margin-left: 0;
+            }
+        }
+
         .k-card-action + .k-card-action {
             border-top-width: $card-actions-border-width;
         }
+
+        .k-card-vertical & {
+            border-top-width: 0;
+            border-left-width: $card-actions-border-width;
+        }
+
+        &.k-card-actions-start { align-items: flex-start; }
+        &.k-card-actions-end { align-items: flex-end; }
+        &.k-card-actions-center { align-items: center; }
     }
+
     .k-card-actions-stretched {
         padding: 0;
         display: flex;
         flex-direction: row;
 
+        .k-button {
+            padding: ($card-actions-padding-y + $button-padding-y) $card-actions-padding-x;
+            flex-grow: 1;
+
+            &.k-flat:first-child {
+                margin-left: 0;
+            }
+        }
+
         .k-card-action + .k-card-action {
             border-left-width: $card-actions-border-width;
+        }
+
+        &.k-card-actions-vertical {
+            flex-direction: column;
         }
     }
 
