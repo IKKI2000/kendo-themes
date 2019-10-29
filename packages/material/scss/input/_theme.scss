@@ -61,7 +61,6 @@
 
         &.k-state-focused > .k-label {
             color: $floating-label-focused-text;
-            background-color: $floating-label-focused-bg;
         }
 
         .ng-invalid.ng-touched + .k-label,
@@ -70,8 +69,18 @@
         }
     }
 
-    .k-textarea-wrapper .k-textarea:focus {
-        border-color: $accent;
+    .k-textarea-wrapper {
+        &:not(.k-state-empty) {
+            > .k-label {
+                background-color: $floating-label-focused-bg;
+            }
+        }
+
+        .k-textarea {
+            &:focus {
+                border-color: $accent;
+            }
+        }
     }
 }
 
