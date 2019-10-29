@@ -6,12 +6,10 @@ $forms-invalid-color: $error !default;
     .k-dateinput,
     .k-datepicker,
     .k-datetimepicker,
-    .k-dropdown,
     .k-multiselect,
     .k-numerictextbox,
     .k-maskedtextbox,
-    .k-timepicker,
-    .k-dropdowntree {
+    .k-timepicker {
         width: $input-default-width;
         font-size: $input-font-size;
         line-height: $input-line-height;
@@ -37,12 +35,10 @@ $forms-invalid-color: $error !default;
     .k-dateinput,
     .k-datepicker,
     .k-datetimepicker,
-    .k-dropdown,
     .k-multiselect,
     .k-numerictextbox,
     .k-maskedtextbox,
-    .k-timepicker,
-    .k-dropdowntree {
+    .k-timepicker {
         border-width: 0;
         background-color: transparent;
     }
